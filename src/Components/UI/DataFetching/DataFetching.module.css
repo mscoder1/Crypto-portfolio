@@ -1,0 +1,10 @@
+.DataFetchingWrap {
+    display: flex;
+    align-self: center;
+    height: 89%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 20px;
+}

@@ -1,0 +1,73 @@
+.sortBlockWrap {
+    display: flex;
+    margin-left: 1vw;
+    height: 5vh;
+    border-bottom: 1px solid #EDEDED;
+    margin-bottom: 20px;
+}
+
+.mrktRank {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 2%;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 24px;
+    color: black;
+}
+
+.coinName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 142px;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 24px;
+    color: black;
+}
+
+.coinPrice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 138px;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 24px;
+    color: black;
+}
+
+.coinDailyPriceChange {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 138px;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 24px;
+    color: black;
+}
+
+.coinDailyHigh {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 142px;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 24px;
+    color: black;
+}
+
+.coinMarketCap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 142px;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 24px;
+    color: black;
+}

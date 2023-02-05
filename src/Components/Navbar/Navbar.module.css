@@ -1,0 +1,31 @@
+.mainWrap {
+    width: 50%;
+    height: 70px;
+    background: #dbe4d1;
+    border-radius: 0px 0px 30px 30px;
+    margin-left: 25%;
+    display: flex;
+    position: absolute;
+    top: 0;
+}
+
+.LinkBlock {
+    width: 34%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LinkElement {
+    color: black;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.NavText {
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -1,0 +1,111 @@
+* {
+    text-decoration: none;
+}
+
+.minorActive {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.minorDisabled {
+    display: none;
+}
+
+.minorMainWrap {
+    width: 25vw;
+    height: 60vh;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    background: #F0F3E8;
+    border-radius: 20px;
+}
+
+.inputBlock {
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.techInputWrap {
+    height: 35px;
+    width: 250px;
+    border: 1px solid #08006C;
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DBE4D1;
+}
+
+.inputSearch {
+    width: 88%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: #DBE4D1;
+    color: black;
+}
+
+.inputSearch::-webkit-input-placeholder { 
+    color: rgba(0, 0, 0, 0.5); 
+}
+
+.minorCardsWrap {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 95%;
+    width: 70%;
+    margin-left: 15%;
+    padding-right: 10px;
+    margin-bottom: 15px;
+}
+
+.minorCardsWrap::-webkit-scrollbar {
+    width: 5px;
+}
+
+.minorCardsWrap::-webkit-scrollbar-track {
+    background: #F0F3E8;
+}
+
+.minorCardsWrap::-webkit-scrollbar-thumb {
+    background-color: #008001;
+    border-radius: 20px;
+    border: 1px solid #008001;
+}
+
+.minorCardText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 99%;
+    height: 10%;
+    border-radius: 13px;
+    margin-top: 20px;
+    text-decoration: none;
+    background: #DBE4D1;
+    transition: background-color 0.5s ease;
+    border-radius: 10px;
+    color: black;
+}
+
+.minorCardText:hover {
+    background: rgba(55, 106, 32, 0.3);
+}
+
+.minorCardTextTechWrap {
+    width: 90%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+}

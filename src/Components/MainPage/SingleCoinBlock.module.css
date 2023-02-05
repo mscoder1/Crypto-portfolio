@@ -1,0 +1,84 @@
+.linkWrap {
+    display: flex;
+    margin-left: 1vw;
+    height: 9.3vh;
+    background: #F0F3E8;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.mrktRank {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0px 1%;
+    font-size: 16px;
+    margin-left: 18px;
+}
+
+.techWrapRank {
+    width: 35px;
+    color: black;
+}
+
+.singleCoinImage {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.coinName {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5px;
+    width: 112px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+.coinPrice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 142px;
+    font-size: 16px;
+    color: black;
+}
+
+.coinDailyPriceChange {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 142px;
+    font-size: 16px;
+    color: green;
+}
+
+.coinDailyPriceChangeNegative {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 142px;
+    font-size: 16px;
+    color: red;
+}
+
+.coinDailyHigh {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 142px;
+    font-size: 16px;
+    color: black;
+}
+
+.coinMarketCap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 142px;
+    font-size: 16px;
+    color: black;
+}

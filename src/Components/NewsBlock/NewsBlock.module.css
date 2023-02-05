@@ -1,0 +1,37 @@
+.newsBlockWrap {
+    width: 350px;
+    height: 69.5vh;
+    background: #F0F3E8;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1%;
+    margin-left: 35px;
+    margin-top: 180px;
+    padding-bottom: 15px;
+}
+
+.newsBlockTitle {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 24px;
+    color: black;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.newsCardsWrap {
+    overflow-x: scroll;
+}
+
+.newsCard {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: black;
+    display: flex;
+    margin: 30px;
+}

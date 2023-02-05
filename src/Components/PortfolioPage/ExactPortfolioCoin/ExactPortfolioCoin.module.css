@@ -1,0 +1,101 @@
+.cardWrap {
+    height: 65px;
+    width: 94%;
+    margin-top: 20px;
+    margin-left: 45px;
+    display: flex;
+    background: #F0F3E8;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.fieldsetportfolio {
+    display: flex;
+    border: none;
+}
+
+.cardDeleteNotActive {
+    opacity: 0;
+    width: 30px;
+    height: 35px;
+    padding-left: 15px;
+}
+
+.cardDelete {
+    width: 30px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 15px;
+}
+
+.cardApplyChangesRight {
+    width: 40px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.buttonInactive {
+    opacity: 0;
+    width: 40px;
+    height: 35px;
+}
+
+.cardWrapTextName {
+    width: 132px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: black;
+    overflow: hidden;
+}
+
+.cardWrapTextOPName {
+    opacity: 0.5;
+    width: 132px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: black;
+}
+
+.cardWrapImage {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.cardWrapText {
+    width: 125px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.cardWrapTextOP {
+    opacity: 0.5;
+    width: 125px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.cardWrapTextInput {
+    width: 80px;
+    height: 25px;
+    border: none;
+    text-align: center;
+    background-color: #F0F3E8;
+    font-size: 17px;
+    color: black;
+}
