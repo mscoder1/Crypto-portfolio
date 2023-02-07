@@ -1,18 +1,20 @@
-import styles from "./MySort.module.css";
+import styles from './MySort.module.css';
 
-interface mySortProps {
-  options: optionTypes[];
+interface MySortProps {
+  options: OptionTypes[];
   defaultValue: string;
   value: string;
   onChange: (e: string) => void;
 }
 
-interface optionTypes {
+interface OptionTypes {
   name: string;
   value: string;
 }
 
-const MySort = ({ options, defaultValue, value, onChange }: mySortProps) => {
+const MySort = ({
+  options, defaultValue, value, onChange,
+}: MySortProps) => {
   return (
     <div className={styles.selectWrap}>
       <select
@@ -23,7 +25,7 @@ const MySort = ({ options, defaultValue, value, onChange }: mySortProps) => {
         <option disabled id="coinselect" value="">
           {defaultValue}
         </option>
-        {options.map((option: optionTypes) => (
+        {options.map((option: OptionTypes) => (
           <option key={option.value} value={option.value}>
             {option.name}
           </option>

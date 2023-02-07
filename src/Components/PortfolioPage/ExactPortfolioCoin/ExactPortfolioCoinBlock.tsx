@@ -1,11 +1,10 @@
-import { memo, useState } from "react";
-import { IFullCoinInfo } from "../../../Models/IFullCoinInfo";
-import { portfolioAPI } from "../../../Services/PortfolioService";
-import styles from "./ExactPortfolioCoin.module.css";
-import { Link } from "react-router-dom";
-import IconCloseCircle from '../../../Assets/PortfolioIcons/IconClose'
-import IconCheckCircle from "../../../Assets/PortfolioIcons/IconCheck";
-
+import { memo, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { IFullCoinInfo } from '../../../Models/IFullCoinInfo';
+import { portfolioAPI } from '../../../Services/PortfolioService';
+import styles from './ExactPortfolioCoin.module.css';
+import IconCloseCircle from '../../../Assets/PortfolioIcons/IconClose';
+import IconCheckCircle from '../../../Assets/PortfolioIcons/IconCheck';
 
 interface PortfolioCoinProps {
   coin: IFullCoinInfo;
@@ -19,7 +18,7 @@ const ExactPortfolioCoin = memo(({ coin, isManage }: PortfolioCoinProps) => {
   const [deleteCoin] = portfolioAPI.useDeleteCoinMutation();
 
   const onChangeQuantity = (
-    e: React.FormEvent<HTMLInputElement> | React.KeyboardEvent<HTMLInputElement>
+    e: React.FormEvent<HTMLInputElement> | React.KeyboardEvent<HTMLInputElement>,
   ) => {
     setCoinQuantity(e.currentTarget.value);
   };
@@ -28,24 +27,23 @@ const ExactPortfolioCoin = memo(({ coin, isManage }: PortfolioCoinProps) => {
     setCoinBuyPrice(e.currentTarget.value);
   };
 
-  const isEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    e.code === "Enter" && checkQuantity(coinQuantity);
-  };
-
   const checkQuantity = (coinQuantity: string) => {
-    +coinQuantity === 0
+    return +coinQuantity === 0
       ? deleteCoin(coin.id)
       : changeCoin({
-          ...coin,
-          quantity: +coinQuantity,
-          buy_price: +coinBuyPrice,
-        });
+        ...coin,
+        quantity: +coinQuantity,
+        buy_price: +coinBuyPrice,
+      });
+  };
+
+  const isEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    return e.code === 'Enter' && checkQuantity(coinQuantity);
   };
 
   const checkProfit = (coin: IFullCoinInfo) => {
     if (coin.quantity && coin.buy_price) {
-      const profit =
-        coin.quantity * coin.current_price - coin.quantity * coin.buy_price;
+      const profit = coin.quantity * coin.current_price - coin.quantity * coin.buy_price;
       return profit.toFixed(2);
     }
   };
@@ -99,13 +97,16 @@ const ExactPortfolioCoin = memo(({ coin, isManage }: PortfolioCoinProps) => {
         />
       </div>
       <div className={isManage ? styles.cardWrapTextOP : styles.cardWrapText}>
-        {coin.price_change_percentage_24h?.toFixed(2)} %
+        {coin.price_change_percentage_24h?.toFixed(2)}
+        %
       </div>
       <div className={isManage ? styles.cardWrapTextOP : styles.cardWrapText}>
-        {checkProfit(coin)} $
+        {checkProfit(coin)}
+        $
       </div>
       <div className={isManage ? styles.cardWrapTextOP : styles.cardWrapText}>
-        $ {checkTotal()}
+        $
+        {checkTotal()}
       </div>
       <div
         onClick={() => checkQuantity(coinQuantity)}

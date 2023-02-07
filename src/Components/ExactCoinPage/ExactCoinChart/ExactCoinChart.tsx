@@ -1,47 +1,47 @@
-import { useState, useEffect, memo } from "react";
-import Highcharts from "highcharts";
-import HighchartsReact from "highcharts-react-official";
-import { IFullCoinInfo } from "../../../Models/IFullCoinInfo";
-import { coinAPI } from "../../../Services/CoinsService";
-import styles from "./Charts.module.css";
-import { defaultLineChartSettings } from "../ExactChartSettings/ExactChartSettings";
+import { useState, useEffect, memo } from 'react';
+import Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
+import { IFullCoinInfo } from '../../../Models/IFullCoinInfo';
+import { coinAPI } from '../../../Services/CoinsService';
+import styles from './Charts.module.css';
+import { defaultLineChartSettings } from '../ExactChartSettings/ExactChartSettings';
 
-interface chartsProps {
+interface ChartsProps {
   coin: IFullCoinInfo;
 }
 
-const Charts = memo((props: chartsProps) => {
+const Charts = memo((props: ChartsProps) => {
   const [isMrktCap, setIsMrktCap] = useState(false);
   const [chartParams, setChartParams] = useState({
     id: `${props.coin?.id}`,
-    time: "1",
-    currency: "usd",
+    time: '1',
+    currency: 'usd',
   });
 
   const { data: chartData = {}, isFetching } = coinAPI.useFetchExactCoinChartQuery(chartParams);
 
   const setTime = (time: string) => {
-    setChartParams((chartParams) => ({ ...chartParams, time: time }));
+    setChartParams((chartParams) => ({ ...chartParams, time }));
   };
 
   const [chartOption, setChartOptions] = useState(
-    defaultLineChartSettings(props, isMrktCap, chartData)
+    defaultLineChartSettings(props, isMrktCap, chartData),
   );
   useEffect(() => {
     setChartOptions((chartOption) => ({
       ...chartOption,
       title: {
-        text: `${props.coin?.name} ${isMrktCap ? "Market Cap" : "Price"}`,
-        dateFormat: "%Y-%m-%d %H:%M:%S",
-        color: "white",
+        text: `${props.coin?.name} ${isMrktCap ? 'Market Cap' : 'Price'}`,
+        dateFormat: '%Y-%m-%d %H:%M:%S',
+        color: 'white',
         style: {
-          color: "black",
+          color: 'black',
         },
       },
       series: [
         {
-          color: isMrktCap ? "#410002" : "#171E0E",
-          name: isMrktCap ? "Market Cap" : "Price",
+          color: isMrktCap ? '#410002' : '#171E0E',
+          name: isMrktCap ? 'Market Cap' : 'Price',
           data: isMrktCap ? chartData.market_caps : chartData.prices,
         },
       ],
@@ -49,14 +49,14 @@ const Charts = memo((props: chartsProps) => {
   }, [chartData, isMrktCap]);
 
   const buttonTimeSettings: string[] = [
-    "1",
-    "7",
-    "14",
-    "30",
-    "90",
-    "180",
-    "365",
-    "max",
+    '1',
+    '7',
+    '14',
+    '30',
+    '90',
+    '180',
+    '365',
+    'max',
   ];
 
   return (
@@ -64,6 +64,7 @@ const Charts = memo((props: chartsProps) => {
       <div className={styles.chartButtonBlock}>
         <div className={styles.lBlock}>
           <button
+            type="button"
             className={
               isMrktCap
                 ? styles.chartButtonLeftNotActive
@@ -74,6 +75,7 @@ const Charts = memo((props: chartsProps) => {
             Price
           </button>
           <button
+            type="button"
             className={
               isMrktCap
                 ? styles.chartButtonLeft
@@ -87,12 +89,13 @@ const Charts = memo((props: chartsProps) => {
         <div className={styles.rBlock}>
           {buttonTimeSettings.map((element) => (
             <button
+              type="button"
               key={element}
-              onClick={(e) => setTime(element)}
+              onClick={() => setTime(element)}
               className={styles.chartButton}
             >
               {element}
-              {element === "max" ? "" : "d"}
+              {element === 'max' ? '' : 'd'}
             </button>
           ))}
         </div>
@@ -105,10 +108,10 @@ const Charts = memo((props: chartsProps) => {
         Data is loading...
       </div>
       <HighchartsReact
-        containerProps={{ style: { height: "90%", width: "100%" } }}
+        containerProps={{ style: { height: '90%', width: '100%' } }}
         highcharts={Highcharts}
         options={chartOption}
-        immutable={true}
+        immutable
       />
     </div>
   );

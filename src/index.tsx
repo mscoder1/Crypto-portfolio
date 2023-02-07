@@ -1,11 +1,11 @@
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-import { setupStore } from "./Store/index";
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import { setupStore } from './Store/index';
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById('root') as HTMLElement,
 );
 
 const store = setupStore();
@@ -14,5 +14,5 @@ root.render(
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </Provider>
+  </Provider>,
 );

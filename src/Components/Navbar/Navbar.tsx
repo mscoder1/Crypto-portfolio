@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import ModalMinor from "../ModalMinor/ModalMinor";
-import styles from "./Navbar.module.css";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import ModalMinor from '../ModalMinor/ModalMinor';
+import styles from './Navbar.module.css';
 
 const Navbar = () => {
   const [isModalActive, setIsModalActive] = useState(false);
@@ -12,12 +12,12 @@ const Navbar = () => {
     <div>
       <div className={styles.mainWrap}>
         <div className={styles.LinkBlock}>
-          <Link className={styles.LinkElement} to={"/"}>
+          <Link className={styles.LinkElement} to="/">
             <div className={styles.NavText}>Main</div>
           </Link>
         </div>
         <div className={styles.LinkBlock}>
-          <Link className={styles.LinkElement} to={"/portfolio"}>
+          <Link className={styles.LinkElement} to="/portfolio">
             <div className={styles.NavText}>Portfolio</div>
           </Link>
         </div>

@@ -1,9 +1,10 @@
-import styles from "./NoRequests.module.css";
+import styles from './NoRequests.module.css';
 
 const NoRequests = () => {
   return (
     <div className={styles.NoRequestsWrap}>
-      Sorry, no requests left <br />
+      Sorry, no requests left
+      <br />
       Please wait
     </div>
   );

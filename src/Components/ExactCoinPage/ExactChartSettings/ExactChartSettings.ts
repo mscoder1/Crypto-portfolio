@@ -1,4 +1,4 @@
-import { IFullCoinInfo } from "../../../Models/IFullCoinInfo";
+import { IFullCoinInfo } from '../../../Models/IFullCoinInfo';
 
 interface ChartsProps {
   coin: IFullCoinInfo;
@@ -12,49 +12,49 @@ interface IChartData {
 export const defaultLineChartSettings = (
   props: ChartsProps,
   isMrktCap: boolean,
-  chartData: IChartData
+  chartData: IChartData,
 ) => {
   return {
     chart: {
-      backgroundColor: "#FDFDF6",
+      backgroundColor: '#FDFDF6',
     },
     title: {
-      text: `${props.coin?.name} ${isMrktCap ? "Market Cap" : "Price"}`,
-      dateFormat: "%Y-%m-%d %H:%M:%S",
-      color: "white",
+      text: `${props.coin?.name} ${isMrktCap ? 'Market Cap' : 'Price'}`,
+      dateFormat: '%Y-%m-%d %H:%M:%S',
+      color: 'white',
       style: {
-        color: "black",
+        color: 'black',
       },
     },
     xAxis: {
       labels: {
         style: {
-          color: "black",
+          color: 'black',
         },
       },
       style: {
-        color: "black",
+        color: 'black',
       },
     },
     yAxis: {
       labels: {
         style: {
-          color: "black",
+          color: 'black',
         },
       },
       style: {
-        color: "black",
+        color: 'black',
       },
     },
     series: [
       {
-        name: "Price $",
+        name: 'Price $',
         data: chartData.prices,
       },
     ],
     legend: {
       itemStyle: {
-        color: "black",
+        color: 'black',
       },
     },
   };

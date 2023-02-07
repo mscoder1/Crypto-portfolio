@@ -1,5 +1,5 @@
-import { newsAPI } from "../../Services/NewsService";
-import styles from "./NewsBlock.module.css";
+import { newsAPI } from '../../Services/NewsService';
+import styles from './NewsBlock.module.css';
 
 const NewsBlock = () => {
   interface INews {
@@ -11,9 +11,7 @@ const NewsBlock = () => {
 
   const {
     data: news,
-    isLoading: isNewsLoading,
-    error: errorNews,
-  } = newsAPI.useFetchNewsQuery("");
+  } = newsAPI.useFetchNewsQuery('');
 
   return (
     <div className={styles.newsBlockWrap}>

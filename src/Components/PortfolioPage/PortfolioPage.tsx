@@ -1,14 +1,15 @@
-import { useEffect, useMemo, useState } from "react";
-import { IFullCoinInfo } from "../../Models/IFullCoinInfo";
-import styles from "./PortfolioPage.module.css";
-import PieChart from "./PieChart/PieChart";
-import ExactPortfolioCoin from "./ExactPortfolioCoin/ExactPortfolioCoinBlock";
-import ModalMinor from "../ModalMinor/ModalMinor";
-import { Reconciliation } from "./ReconciliationFunction";
-import MySort from "../Sort/MySort";
-import { TopInfoBlock } from "./MinorElements/TopInfoBlock/TopInfoBlock";
-import { PortfolioPageChangeElement } from "./MinorElements/PortfolioPageChangeElement/PortfolioPageChangeElement";
-import AddButton from "./MinorElements/AddButton/AddButton";
+import { useEffect, useMemo, useState } from 'react';
+import { IFullCoinInfo } from '../../Models/IFullCoinInfo';
+import styles from './PortfolioPage.module.css';
+import PieChart from './PieChart/PieChart';
+import ExactPortfolioCoin from './ExactPortfolioCoin/ExactPortfolioCoinBlock';
+import ModalMinor from '../ModalMinor/ModalMinor';
+import { Reconciliation } from './ReconciliationFunction';
+import MySort from '../Sort/MySort';
+import { TopInfoBlock } from './MinorElements/TopInfoBlock/TopInfoBlock';
+import { PortfolioPageChangeElement } from './MinorElements/PortfolioPageChangeElement/PortfolioPageChangeElement';
+import AddButton from './MinorElements/AddButton/AddButton';
+import { SortOptions } from './SortOption/SortOptions';
 
 interface PortfolioPageProps {
   coins: IFullCoinInfo[];
@@ -21,7 +22,7 @@ const PortfolioPage = ({ coins }: PortfolioPageProps) => {
   const [isModalMinor, setIsModalMinor] = useState(false);
   const [balance, setBalance] = useState(0);
 
-  const [sortedCoins, setSortedCoins] = useState("");
+  const [sortedCoins, setSortedCoins] = useState('');
 
   const getBalances = (portfolio: IFullCoinInfo[]) => {
     portfolio?.forEach((element) => {
@@ -45,18 +46,17 @@ const PortfolioPage = ({ coins }: PortfolioPageProps) => {
   };
 
   const onManage = () => {
-    !isManage ? setIsManage(true) : setIsManage(false);
+    return !isManage ? setIsManage(true) : setIsManage(false);
   };
 
-  const TotalProfitLoss =
-    (currentBalance - initialBalance) / (initialBalance / 100);
+  const TotalProfitLoss = (currentBalance - initialBalance) / (initialBalance / 100);
 
   const PNLCurrency = currentBalance - initialBalance;
 
   const sortCoins = () => {
     return (
-      coins &&
-      [...coins].sort((a, b) => {
+      coins
+      && [...coins].sort((a, b) => {
         return (b as any)[sortedCoins] - (a as any)[sortedCoins];
       })
     );
@@ -86,6 +86,7 @@ const PortfolioPage = ({ coins }: PortfolioPageProps) => {
           <div className={styles.PPManageCoins}>
             <div className={styles.PPAddToPButton}>
               <button
+                type="button"
                 onClick={() => onManage()}
                 className={
                   isManage
@@ -105,29 +106,25 @@ const PortfolioPage = ({ coins }: PortfolioPageProps) => {
               value={sortedCoins}
               onChange={(sort) => setSortedCoins(sort)}
               defaultValue="Sort"
-              options={[
-                { value: "current_price", name: "Current Price" },
-                { value: "quantity", name: "Qantity" },
-                { value: "price_change_percentage_24h", name: "Daily Change" },
-              ]}
+              options={SortOptions}
             />
             <TopInfoBlock />
             <div className={styles.portfolioCardsWrap}>
               {sortedCoins
                 ? sortCoins()?.map((coin: IFullCoinInfo) => (
-                    <ExactPortfolioCoin
-                      key={coin.id}
-                      coin={coin}
-                      isManage={isManage}
-                    />
-                  ))
+                  <ExactPortfolioCoin
+                    key={coin.id}
+                    coin={coin}
+                    isManage={isManage}
+                  />
+                ))
                 : coins?.map((coin: IFullCoinInfo) => (
-                    <ExactPortfolioCoin
-                      key={coin.id}
-                      coin={coin}
-                      isManage={isManage}
-                    />
-                  ))}
+                  <ExactPortfolioCoin
+                    key={coin.id}
+                    coin={coin}
+                    isManage={isManage}
+                  />
+                ))}
             </div>
           </div>
           <div className={styles.portfolioChartWrap}>

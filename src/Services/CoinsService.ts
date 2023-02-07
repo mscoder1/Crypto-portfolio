@@ -1,9 +1,9 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IFullCoinInfo } from "../Models/IFullCoinInfo";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { IFullCoinInfo } from '../Models/IFullCoinInfo';
 
 export const coinAPI = createApi({
-  reducerPath: "coinAPI",
-  baseQuery: fetchBaseQuery({ baseUrl: "" }),
+  reducerPath: 'coinAPI',
+  baseQuery: fetchBaseQuery({ baseUrl: '' }),
   endpoints: (build) => ({
     FetchAllCoins: build.query({
       query: (page) => ({
@@ -17,7 +17,7 @@ export const coinAPI = createApi({
     }),
     SearchCoin: build.query({
       query: () => ({
-        url: "https://api.coingecko.com/api/v3/coins/list",
+        url: 'https://api.coingecko.com/api/v3/coins/list',
       }),
     }),
     FetchExactCoinChart: build.query({

@@ -1,6 +1,6 @@
-import { Route, Routes } from "react-router-dom";
-import MainCoinList from "../MainPage/MainCoinList";
-import { AllRoutes } from "./Routes";
+import { Route, Routes } from 'react-router-dom';
+import MainCoinList from '../MainPage/MainCoinList';
+import { AllRoutes } from './Routes';
 
 const AppRouter = () => {
   return (

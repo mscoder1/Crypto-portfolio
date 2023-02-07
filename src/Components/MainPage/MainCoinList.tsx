@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { coinAPI } from "../../Services/CoinsService";
-import NewsBlock from "../NewsBlock/NewsBlock";
-import MainSingleCoinBLock from "./MainSingleCoinBlock";
-import styles from "./MainCoinList.module.css";
-import { IFullCoinInfo } from "../../Models/IFullCoinInfo";
-import NoRequests from "../UI/NoRequests/NoRequests";
-import TopInfoBlock from "./MinorElements/TopInfoBlock";
-import DataFetching from "../UI/DataFetching/DataFetching";
+import { useState } from 'react';
+import { coinAPI } from '../../Services/CoinsService';
+import NewsBlock from '../NewsBlock/NewsBlock';
+import MainSingleCoinBLock from './MainSingleCoinBlock';
+import styles from './MainCoinList.module.css';
+import { IFullCoinInfo } from '../../Models/IFullCoinInfo';
+import NoRequests from '../UI/NoRequests/NoRequests';
+import TopInfoBlock from './MinorElements/TopInfoBlock';
+import DataFetching from '../UI/DataFetching/DataFetching';
 
 const MainCoinList = () => {
   const [page, setPage] = useState(1);
@@ -30,30 +30,43 @@ const MainCoinList = () => {
                 <MainSingleCoinBLock
                   key={coin.id}
                   coin={coin}
-                  currency={"USD"}
+                  currency="USD"
                 />
               ))
             )}
             <div className={styles.bottomBtnBlockWrap}>
               {error && <NoRequests />}
               <div className={error ? styles.bottomBtnBlockNotActive : styles.bottomBtnBlock}>
-                <button className={page === 1 ? styles.bottomBtnDisabled : styles.toFirstPageBtn}
+                <button
+                  type="button"
+                  className={page === 1 ? styles.bottomBtnDisabled : styles.toFirstPageBtn}
                   onClick={() => setPage(1)}
                 >
                   1
                 </button>
-                <button className={page > 2 ? styles.toPrevBtn : styles.bottomBtnDisabled}
+                <button
+                  type="button"
+                  className={page > 2 ? styles.toPrevBtn : styles.bottomBtnDisabled}
                   onClick={() => setPage((page) => page - 1)}
                 >
                   {page - 1}
                 </button>
-                <button className={styles.currentPageBtn}>{page}</button>
-                <button className={page >= 119 ? styles.bottomBtnDisabled : styles.toNextBtn}
-                  onClick={() =>setPage((page) => (page === 118 ? 119 : page + 1))}
+                <button
+                  type="button"
+                  className={styles.currentPageBtn}
+                >
+                  {page}
+                </button>
+                <button
+                  type="button"
+                  className={page >= 119 ? styles.bottomBtnDisabled : styles.toNextBtn}
+                  onClick={() => setPage((page) => (page === 118 ? 119 : page + 1))}
                 >
                   {page === 118 ? 119 : page + 1}
                 </button>
-                <button className={page === 120 ? styles.bottomBtnDisabled : styles.toLastPageBtn}
+                <button
+                  type="button"
+                  className={page === 120 ? styles.bottomBtnDisabled : styles.toLastPageBtn}
                   onClick={() => setPage(120)}
                 >
                   120

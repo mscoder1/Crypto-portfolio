@@ -1,18 +1,18 @@
-import ExactCoinPage from "../ExactCoinPage/ExactCoinPage";
-import MainCoinList from "../MainPage/MainCoinList";
-import PortfolioPageCheckCoins from "../PortfolioPage/PortfolioPageCheckCoins";
+import ExactCoinPage from '../ExactCoinPage/ExactCoinPage';
+import MainCoinList from '../MainPage/MainCoinList';
+import PortfolioPageCheckCoins from '../PortfolioPage/PortfolioPageCheckCoins';
 
 export const AllRoutes = [
   {
-    path: "/",
+    path: '/',
     element: <MainCoinList />,
   },
   {
-    path: "/portfolio",
+    path: '/portfolio',
     element: <PortfolioPageCheckCoins />,
   },
   {
-    path: "/coins/:id",
+    path: '/coins/:id',
     element: <ExactCoinPage />,
   },
 ];

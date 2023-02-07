@@ -1,8 +1,8 @@
-import { memo, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
-import { coinAPI } from "../../Services/CoinsService";
-import NoRequests from "../UI/NoRequests/NoRequests";
-import styles from "./ModalMinor.module.css";
+import { memo, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { coinAPI } from '../../Services/CoinsService';
+import NoRequests from '../UI/NoRequests/NoRequests';
+import styles from './ModalMinor.module.css';
 
 interface ModalMinorProps {
   isActive: boolean;
@@ -16,10 +16,10 @@ interface SearchedCoinsTypes {
 }
 
 const ModalMinor = memo((props: ModalMinorProps) => {
-  const [searchCoin, setSearchCoin] = useState("");
-  const { data: coins, isError } = coinAPI.useSearchCoinQuery("", {});
+  const [searchCoin, setSearchCoin] = useState('');
+  const { data: coins, isError } = coinAPI.useSearchCoinQuery('');
   const onClick = () => {
-    setSearchCoin("");
+    setSearchCoin('');
     props.setIsActive(false);
   };
 
@@ -28,13 +28,12 @@ const ModalMinor = memo((props: ModalMinorProps) => {
   const SearchCards = useMemo(() => {
     return searchCoin
       ? [...coins].filter((coin) => {
-          if (coin.name.toLowerCase() === searchCoin.toLocaleLowerCase()) {
-            return exactSearchedElement.push(coin);
-          } else
-            return coin.name
-              .toLowerCase()
-              .includes(searchCoin.toLocaleLowerCase());
-        })
+        if (coin.name.toLowerCase() === searchCoin.toLocaleLowerCase()) {
+          return exactSearchedElement.push(coin);
+        } return coin.name
+          .toLowerCase()
+          .includes(searchCoin.toLocaleLowerCase());
+      })
       : [];
   }, [searchCoin]);
 

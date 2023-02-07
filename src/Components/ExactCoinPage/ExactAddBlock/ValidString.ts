@@ -1,4 +1,4 @@
 export const checkValidData = (quantity: string, buyPrice: string) => {
-  const Alphabet = /(?!(?<!^),|(?<!^)\.)[+\D]/g;
-  return Alphabet.test(quantity) || Alphabet.test(buyPrice);
+  const String = /(?!(?<!^),|(?<!^)\.)[+\D]/g;
+  return String.test(quantity) || String.test(buyPrice);
 };

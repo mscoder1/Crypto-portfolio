@@ -1,4 +1,4 @@
-import styles from "./TopInfoBlock.module.css";
+import styles from './TopInfoBlock.module.css';
 
 export const TopInfoBlock = () => {
   return (
