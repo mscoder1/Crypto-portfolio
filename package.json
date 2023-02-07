@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@reduxjs/toolkit": "^1.9.1",
+    "@reduxjs/toolkit": "^1.9.2",
     "@types/highcharts": "^7.0.0",
     "@types/jest": "^27.5.2",
     "@types/react": "^18.0.27",
