@@ -5,7 +5,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",
     "@types/highcharts": "^7.0.0",
-    "@types/jest": "^27.5.2",
+    "@types/jest": "^29.4.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@types/react-redux": "^7.1.25",
