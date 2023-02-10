@@ -1,5 +1,4 @@
 const countSize = () => {
-  console.log(window.innerWidth);
   return window.innerWidth < 500 ? 20 : (500 / (window.innerWidth / 100)).toFixed();
 };
 
