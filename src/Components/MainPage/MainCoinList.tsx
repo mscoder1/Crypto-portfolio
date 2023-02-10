@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import _ from 'lodash';
 import { coinAPI } from '../../Services/CoinsService';
 import NewsBlock from '../NewsBlock/NewsBlock';
 import MainSingleCoinBLock from './MainSingleCoinBlock';
@@ -16,6 +17,14 @@ const MainCoinList = () => {
     isFetching,
     error,
   } = coinAPI.useFetchAllCoinsQuery(page);
+
+  const { data: AllCoins } = coinAPI.useSearchCoinQuery('');
+
+  const PagesCount = AllCoins && _.range(Math.ceil(AllCoins.length / 100));
+
+  /* DOPISAT KNOPKI MAPOM */
+
+  console.log(PagesCount);
 
   return (
     <div className={styles.mainWrap}>

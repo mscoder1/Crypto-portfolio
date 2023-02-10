@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from '@mui/material/Button';
 import { IFullCoinInfo } from '../../../Models/IFullCoinInfo';
 import { portfolioAPI } from '../../../Services/PortfolioService';
 import styles from './ExactAddBlock.module.css';
@@ -63,7 +64,8 @@ const ExactAddBlock = ({ coin, isAdded }: ExactAddBlockProps) => {
           </label>
         </div>
       </fieldset>
-      <button
+      <Button
+        variant="contained"
         type="button"
         disabled={
           isAdded === true
@@ -83,7 +85,7 @@ const ExactAddBlock = ({ coin, isAdded }: ExactAddBlockProps) => {
         }}
       >
         {isAdded ? 'Coin Added' : 'Add coin'}
-      </button>
+      </Button>
     </form>
   );
 };

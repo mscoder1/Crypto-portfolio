@@ -16,18 +16,16 @@
 
 .cardDeleteNotActive {
     opacity: 0;
-    width: 30px;
+    width: 45px;
     height: 35px;
-    padding-left: 15px;
 }
 
 .cardDelete {
-    width: 30px;
+    width: 45px;
     height: 35px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding-left: 15px;
+    justify-content: center;
 }
 
 .cardApplyChangesRight {

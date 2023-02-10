@@ -1,7 +1,12 @@
+const countSize = () => {
+  return window.innerWidth < 500 ? 20 : (500 / (window.innerWidth / 100)).toFixed();
+};
+
 export const PieChartSettings = {
   chart: {
     type: 'pie',
     backgroundColor: '#FDFDF6',
+    height: '80%',
   },
   title: {
     text: '',
@@ -13,13 +18,12 @@ export const PieChartSettings = {
     pie: {
       allowPointSelect: true,
       cursor: 'pointer',
+      size: `${countSize()}%`,
       dataLabels: {
         enabled: true,
         format: '<b>{point.name}</b>: {point.percentage:.1f} %',
         style: {
-          fontSize: '13.5px',
-          with: '20%',
-          heigth: '20%',
+          fontSize: '12px',
         },
       },
     },

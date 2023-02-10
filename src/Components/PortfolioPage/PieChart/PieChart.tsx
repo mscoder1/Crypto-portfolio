@@ -46,7 +46,7 @@ const PieChart = memo((data: PieChartProps) => {
       <HighchartsReact
         highcharts={Highcharts}
         options={options}
-        containerProps={{ style: { height: '100%', width: '530px' } }}
+        containerProps={{ style: { height: '100%', width: '500px' } }}
       />
     </div>
   );
