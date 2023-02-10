@@ -10,7 +10,7 @@ const AddButton = () => {
   };
 
   return (
-    <div className={styles.PPAddToPButton}>
+    <div>
       <button
         type="button"
         className={styles.PPAddBlockButtonAdd}

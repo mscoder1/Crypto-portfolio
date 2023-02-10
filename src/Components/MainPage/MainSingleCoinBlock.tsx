@@ -15,7 +15,7 @@ const MainSingleCoinBLock = memo(({ coin, currency }: SingleCoinBlockProps) => {
         <div className={styles.techWrapRank}>{coin.market_cap_rank}</div>
       </div>
       <div className={styles.coinName}>
-        <img className={styles.singleCoinImage} src={coin.image} alt="coinLogo" />
+        {coin.image && <img className={styles.singleCoinImage} src={coin.image} alt="coinLogo" />}
         {coin.name}
       </div>
       <div className={styles.coinPrice}>

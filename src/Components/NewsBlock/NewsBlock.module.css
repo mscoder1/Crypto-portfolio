@@ -1,12 +1,12 @@
 .newsBlockWrap {
     width: 350px;
-    height: 69.5vh;
+    height: 73vh;
     background: #F0F3E8;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     padding-top: 1%;
-    margin-left: 35px;
+    margin-left: 100px;
     margin-top: 180px;
     padding-bottom: 15px;
 }
@@ -24,7 +24,33 @@
 }
 
 .newsCardsWrap {
-    overflow-x: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    width: 105%;
+}
+
+.newsCardsWrap::-webkit-scrollbar {
+    width: 5px;
+    opacity: 0;
+}
+
+.newsCardsWrap:hover::-webkit-scrollbar {
+    width: 5px;
+    opacity: 1;
+}
+
+.newsCardsWrap:hover::-webkit-scrollbar-track {
+    background: rgba(237, 237, 237, 0.7);
+    border-radius: 3.5px;
+}
+
+.newsCardsWrap:hover::-webkit-scrollbar-thumb {
+    width: 7px;
+    height: 92px;
+    background: #376A20;
+    border-radius: 3.5px;
 }
 
 .newsCard {

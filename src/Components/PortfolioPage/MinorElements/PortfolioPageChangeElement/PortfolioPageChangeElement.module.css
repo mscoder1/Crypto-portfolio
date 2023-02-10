@@ -17,3 +17,16 @@
 .PortfolioPageChangeElementText {
     color: black;
 }
+
+@media screen and (max-width: 800px) {
+    .PortfolioPageChangeBlock {
+        flex-direction: column;
+    }
+    .PortfolioPageChangeElement {
+        margin-top: 5%;
+        width: 100%;
+        height: 50px;
+        align-items: center;
+        padding: 3% 5%;
+    }
+}
