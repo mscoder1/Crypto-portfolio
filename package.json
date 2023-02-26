@@ -10,7 +10,7 @@
     "@reduxjs/toolkit": "^1.9.2",
     "@types/highcharts": "^7.0.0",
     "@types/jest": "^29.4.0",
-    "@types/react": "^18.0.27",
+    "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.10",
     "@types/react-redux": "^7.1.25",
     "@types/typescript": "^2.0.0",
