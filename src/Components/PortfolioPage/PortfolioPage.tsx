@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IFullCoinInfo } from '../../Models/IFullCoinInfo';
 import styles from './PortfolioPage.module.css';
 import PieChart from './PieChart/PieChart';
@@ -10,48 +10,29 @@ import { TopInfoBlock } from './MinorElements/TopInfoBlock/TopInfoBlock';
 import { PortfolioPageChangeElement } from './MinorElements/PortfolioPageChangeElement/PortfolioPageChangeElement';
 import AddButton from './MinorElements/AddButton/AddButton';
 import { SortOptions } from './SortOption/SortOptions';
+import { getPortfolioData } from './Functions/GetPortfolioData';
 
 interface PortfolioPageProps {
   coins: IFullCoinInfo[];
 }
 
 const PortfolioPage = ({ coins }: PortfolioPageProps) => {
-  const [initialBalance, setInitialBalance] = useState(0);
-  const [currentBalance, setCurrentBalance] = useState(0);
   const [isManage, setIsManage] = useState(false);
   const [isModalMinor, setIsModalMinor] = useState(false);
-  const [balance, setBalance] = useState(0);
-
   const [sortedCoins, setSortedCoins] = useState('');
 
-  const getBalances = (portfolio: IFullCoinInfo[]) => {
-    portfolio?.forEach((element) => {
-      setBalance((balance) => {
-        return element.quantity
-          ? balance + element.current_price * element.quantity
-          : balance + element.current_price;
-      });
-    });
-  };
-
-  const getTotalProfit = (portfolio: IFullCoinInfo[]) => {
-    return portfolio?.forEach((element) => {
-      if (element.buy_price && element.quantity) {
-        const initBlc = element.buy_price * element.quantity;
-        const currBlc = element.current_price * element.quantity;
-        setInitialBalance((initialBalance) => +initialBalance + initBlc);
-        setCurrentBalance((currentBalance) => +currentBalance + currBlc);
-      }
-    });
-  };
+  const {
+    initialBalance: iinitialBalance,
+    currentBalance: ccurrentBalance,
+  } = getPortfolioData(coins);
 
   const onManage = () => {
-    return !isManage ? setIsManage(true) : setIsManage(false);
+    setIsManage(!isManage);
   };
 
-  const TotalProfitLoss = (currentBalance - initialBalance) / (initialBalance / 100);
+  const TotalProfitLoss = (ccurrentBalance - iinitialBalance) / (iinitialBalance / 100);
 
-  const PNLCurrency = currentBalance - initialBalance;
+  const PNLCurrency = ccurrentBalance - iinitialBalance;
 
   const sortCoins = () => {
     return (
@@ -64,22 +45,14 @@ const PortfolioPage = ({ coins }: PortfolioPageProps) => {
 
   useEffect(() => {
     Reconciliation(coins as []);
-  }, [coins, sortedCoins]);
-
-  useMemo(() => {
-    setInitialBalance(0);
-    setCurrentBalance(0);
-    setBalance(0);
-    getBalances(coins as []);
-    getTotalProfit(coins as []);
-  }, [coins]);
+  }, []);
 
   return (
     <div className={styles.PortfolioPageWrap}>
       <div className={styles.PortfolioPageTechWrap}>
         <div className={styles.PPTopWrap}>
           <PortfolioPageChangeElement
-            balance={balance}
+            balance={ccurrentBalance}
             TotalProfitLoss={TotalProfitLoss}
             PNLCurrency={PNLCurrency}
           />
@@ -128,7 +101,7 @@ const PortfolioPage = ({ coins }: PortfolioPageProps) => {
             </div>
           </div>
           <div className={styles.portfolioChartWrap}>
-            {coins && <PieChart balance={balance} coins={coins} />}
+            {coins && <PieChart balance={ccurrentBalance} coins={coins} />}
           </div>
         </div>
       </div>

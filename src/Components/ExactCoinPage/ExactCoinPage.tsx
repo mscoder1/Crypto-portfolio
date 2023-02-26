@@ -9,20 +9,22 @@ import LoadingCoinPage from '../UI/LoadingCoinPage/LoadingCoinPage';
 import NoRequests from '../UI/NoRequests/NoRequests';
 
 const ExactCoinPage = () => {
-  const Params = useParams();
+  const params = useParams();
   const [isAdded, setIsAdded] = useState(false);
-  const { data, isLoading, error } = coinAPI.useFetchExactCoinQuery(`${Params.id}`);
+  const { data, isLoading, error } = coinAPI.useFetchExactCoinQuery(`${params.id}`);
   const { data: portfolioCoins } = portfolioAPI.useGetCoinFromPortfolioQuery('');
 
   const checkIsAdded = () => {
-    portfolioCoins?.some(
-      (element) => data?.[0].name === element.name && setIsAdded(true),
-    );
+    if (data && portfolioCoins) {
+      portfolioCoins.some(
+        (element) => data?.[0].name === element.name && setIsAdded(true),
+      );
+    }
   };
 
   useEffect(() => {
     checkIsAdded();
-  });
+  }, [data, portfolioCoins]);
 
   return (
     <div className={styles.ECwrap}>

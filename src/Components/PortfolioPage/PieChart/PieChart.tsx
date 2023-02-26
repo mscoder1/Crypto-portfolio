@@ -11,6 +11,10 @@ interface PieChartProps {
 
 const PieChart = memo((data: PieChartProps) => {
   const getPieData = () => {
+    if (!data.coins || !Array.isArray(data.coins)) {
+      return [];
+    }
+
     return data.coins?.map((element) => {
       return {
         name: element.name,
@@ -46,7 +50,7 @@ const PieChart = memo((data: PieChartProps) => {
       <HighchartsReact
         highcharts={Highcharts}
         options={options}
-        containerProps={{ style: { height: '100%', width: '500px' } }}
+        containerProps={{ style: { height: '100%', width: '530px' } }}
       />
     </div>
   );

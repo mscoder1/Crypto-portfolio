@@ -22,20 +22,10 @@
     height: 100%;
     display: flex;
     align-items: center;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .NavText {
     font-size: 20px;
     font-weight: bold;
-}
-@media screen and (max-width: 800px) {
-    .mainWrap {
-        width: 100%;
-        margin: 0;
-        position: fixed;
-        z-index: 100000;
-        height: 50px;
-        border-radius: 0;
-    }
 }

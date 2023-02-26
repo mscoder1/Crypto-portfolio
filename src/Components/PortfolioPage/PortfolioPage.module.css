@@ -1,7 +1,7 @@
 .PortfolioPageWrap {
     background-color: #FDFDF6;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 .PortfolioPageTechWrap {
@@ -11,8 +11,7 @@
 }
 
 .portfolioCardsWrap {
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: scroll;
     height: 85%;
     width: 100%;
     padding-left: 5px;
@@ -123,82 +122,9 @@
     width: 100%;
     height: 100%;
     z-index: 1000;
+    background-color: red;
 }
 
 .portfolioChartWrapNotDisplayed {
     display: none;
-}
-
-@media screen and (max-width: 1300px) {
-    .PortfolioPageWrap {
-        width: 100%;
-        height: 120%;
-        max-height: 120%;
-    }
-    .PPTopWrap {
-        margin-top: 10%;
-    }
-    .PPAddToPButton {
-        width: 40%;
-    }
-    .portfolioMainInfoWrap {
-        display: flex;
-        flex-direction: column;
-    }
-    .coinsCardWrap {
-        height: 300px;
-        margin: 0 auto;
-        width: 80%;
-        padding-right: 30px;
-    }
-    .portfolioChartWrap {
-        height: 500px;
-        width: 100%;
-        background-color: #FDFDF6;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .PortfolioPageWrap {
-        width: 120%;
-        height: 120%;
-        max-height: 120%;
-        overflow-x: hidden;
-        overflow-y: scroll;
-    }
-    .PPTopWrap {
-        width: 80%;
-        display: flex;
-        margin: 0 auto;
-        margin-top: 10%;
-        justify-content: space-between;
-        flex-direction: column;
-    }
-    .PPAddToPButton {
-        width: 35%;
-    }
-    .PPManageCoins {
-        padding-top: 10%;
-        width: 100%;
-    }
-    .coinsCardWrap {
-        margin-top: 280px;
-        height: 100%;
-        width: 100%;
-        overflow-x: scroll;
-        overflow-y: hidden;
-    }
-    .portfolioCardsWrap {
-        width: 800px;
-    }
-    .cardWrap {
-        width: 800px;
-    }
-    .portfolioChartWrap {
-
-    }
 }

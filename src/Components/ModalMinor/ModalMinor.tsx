@@ -17,7 +17,7 @@ interface SearchedCoinsTypes {
 
 const ModalMinor = memo((props: ModalMinorProps) => {
   const [searchCoin, setSearchCoin] = useState('');
-  const { data: coins, isError } = coinAPI.useSearchCoinQuery('');
+  const { data: coins = [], isError } = coinAPI.useSearchCoinQuery('');
   const onClick = () => {
     setSearchCoin('');
     props.setIsActive(false);
@@ -37,7 +37,7 @@ const ModalMinor = memo((props: ModalMinorProps) => {
       : [];
   }, [searchCoin]);
 
-  const SearchedCoins = exactSearchedElement.length > 0 ? exactSearchedElement : SearchCards;
+  const SearchedCoins = exactSearchedElement.length ? exactSearchedElement : SearchCards;
 
   return (
     <div

@@ -32,7 +32,6 @@
     height: 94%;
     width: 58vw;
 }
-
 .mainCoinListWrapScroll::-webkit-scrollbar {
     width: 5px;
 }
@@ -113,10 +112,6 @@
     font-size: 19px;
     line-height: 24px;
     color: black;
-}
-
-.bottomBtnBlockWrap {
-
 }
 
 .bottomBtnBlock {

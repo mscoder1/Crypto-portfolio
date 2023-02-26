@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import Button from '@mui/material/Button';
 import { IFullCoinInfo } from '../../../Models/IFullCoinInfo';
 import { portfolioAPI } from '../../../Services/PortfolioService';
 import styles from './ExactAddBlock.module.css';
-import { checkValidData } from './ValidString';
 
 interface ExactAddBlockProps {
   coin: IFullCoinInfo;
@@ -11,81 +9,79 @@ interface ExactAddBlockProps {
 }
 
 const ExactAddBlock = ({ coin, isAdded }: ExactAddBlockProps) => {
-  const [quantity, setQuantity] = useState('');
-  const [buyPrice, setBuyPrice] = useState('');
+  const [formData, setFormData] = useState({
+    quantity: '',
+    buyPrice: '',
+  });
 
   const [addCoin] = portfolioAPI.useAddCoinToPortfolioMutation();
 
-  const addCoinToPortfolio = (coin: IFullCoinInfo) => {
-    addCoin(coin);
+  const handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
+    const { name, value } = e.currentTarget;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const onChangeQuantity = (e: React.FormEvent<HTMLInputElement>) => {
-    setQuantity(e.currentTarget.value);
-  };
-
-  const onChangeBuyPrice = (e: React.FormEvent<HTMLInputElement>) => {
-    setBuyPrice(e.currentTarget.value);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    addCoin({
+      ...coin,
+      quantity: +formData.quantity,
+      buy_price: +formData.buyPrice,
+    });
+    setFormData({
+      quantity: '',
+      buyPrice: '',
+    });
   };
 
   return (
-    <form className={styles.ecaddToPort}>
+    <form className={styles.ecaddToPort} onSubmit={handleSubmit}>
       <div className={styles.addBlckInfoTitle}>
         ADD
         {coin?.name?.toUpperCase()}
         TO PORTFOLIO
       </div>
-      <fieldset
-        className={styles.fieldsetaddblock}
-        disabled={isAdded === true}
-      >
+      <fieldset className={styles.fieldsetaddblock} disabled={isAdded}>
         <div className={styles.enterInfo}>
-          <label htmlFor="BuyPrice" className={styles.EnterText}>
+          <label htmlFor="buyPrice" className={styles.EnterText}>
             Enter buy price:
             <input
-              id="BuyPrice"
+              id="buyPrice"
+              name="buyPrice"
               className={styles.EnterInput}
-              value={buyPrice}
-              onChange={(e) => onChangeBuyPrice(e)}
+              value={formData.buyPrice}
+              onChange={handleInputChange}
               placeholder="Buy Price..."
+              type="number"
+              min="0"
+              required
             />
           </label>
         </div>
         <div className={styles.enterInfo}>
-          <label htmlFor="Quantity" className={styles.EnterText}>
+          <label htmlFor="quantity" className={styles.EnterText}>
             Enter quantity:
             <input
-              id="Quantity"
+              id="quantity"
+              name="quantity"
               className={styles.EnterInput}
-              value={quantity}
-              onChange={(e) => onChangeQuantity(e)}
+              value={formData.quantity}
+              onChange={handleInputChange}
               placeholder="Quantity..."
+              type="number"
+              min="0"
+              required
             />
           </label>
         </div>
       </fieldset>
-      <Button
-        variant="contained"
-        type="button"
-        disabled={
-          isAdded === true
-          || quantity === ''
-          || buyPrice === ''
-          || checkValidData(quantity, buyPrice)
-        }
+      <button
+        type="submit"
+        disabled={isAdded || !formData.quantity || !formData.buyPrice}
         className={styles.addCoinButton}
-        onClick={() => {
-          addCoinToPortfolio({
-            ...coin,
-            quantity: +quantity,
-            buy_price: +buyPrice,
-          });
-          setQuantity('');
-          setBuyPrice('');
-        }}
       >
         {isAdded ? 'Coin Added' : 'Add coin'}
-      </Button>
+      </button>
     </form>
   );
 };
