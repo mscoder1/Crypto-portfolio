@@ -9,21 +9,21 @@ const NewsBlock = () => {
     url: string;
   }
 
-  const {
-    data: news,
-  } = newsAPI.useFetchNewsQuery('');
+  const { data: news } = newsAPI.useFetchNewsQuery('');
 
   return (
-    <div className={styles.newsBlockWrap}>
-      <div className={styles.newsBlockTitle}>Latest News</div>
+    <section className={styles.newsBlockWrap}>
+      <h2 className={styles.newsBlockTitle}>Latest News</h2>
       <div className={styles.newsCardsWrap}>
         {news?.map((element: INews) => (
-          <a href={element.url} className={styles.newsCard} key={element.url}>
-            {element.title}
-          </a>
+          <article className={styles.newsCard} key={element.url}>
+            <a href={element.url} className={styles.newsCard}>
+              <h3>{element.title}</h3>
+            </a>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IFullCoinInfo } from '../../../Models/IFullCoinInfo';
 import { portfolioAPI } from '../../../Services/PortfolioService';
@@ -41,19 +41,21 @@ const ExactPortfolioCoin = memo(({ coin, isManage }: PortfolioCoinProps) => {
     return e.code === 'Enter' && checkQuantity(coinQuantity);
   };
 
-  const checkProfit = (coin: IFullCoinInfo) => {
-    if (coin.quantity && coin.buy_price) {
-      const profit = coin.quantity * coin.current_price - coin.quantity * coin.buy_price;
-      return profit.toFixed(2);
-    }
-  };
+  const checkProfit = useMemo(() => {
+    return (coin: IFullCoinInfo) => {
+      if (coin.quantity && coin.buy_price) {
+        const profit = coin.quantity * coin.current_price - coin.quantity * coin.buy_price;
+        return profit.toFixed(2);
+      }
+    };
+  }, []);
 
   const checkTotal = () => {
     return coin.quantity && (coin.current_price * coin.quantity).toFixed(2);
   };
 
   return (
-    <div className={styles.cardWrap} key={coin.name}>
+    <form className={styles.cardWrap} key={coin.name}>
       <div
         onClick={() => deleteCoin(coin.id)}
         className={isManage ? styles.cardDelete : styles.cardDeleteNotActive}
@@ -70,39 +72,50 @@ const ExactPortfolioCoin = memo(({ coin, isManage }: PortfolioCoinProps) => {
           className={styles.cardWrapImage}
           src={coin.image}
           alt="Coin Logo"
+          aria-label={coin.name}
         />
-        {coin.name}
+        <h3 className={styles.cardNameText}>
+          {coin.name}
+        </h3>
       </Link>
-      <div className={isManage ? styles.cardWrapTextOP : styles.cardWrapText}>
+      <span className={isManage ? styles.cardWrapTextOP : styles.cardWrapText}>
+        $
         {coin.current_price}
-      </div>
-      <div className={styles.cardWrapText} onClick={(e) => e.stopPropagation()}>
-        <input
-          type="text"
-          className={styles.cardWrapTextInput}
-          value={coinBuyPrice}
-          onKeyDown={(e) => isEnter(e)}
-          onChange={(e) => onChangeBuyPrice(e)}
-          disabled={!isManage === true}
-        />
-      </div>
-      <div className={styles.cardWrapText} onClick={(e) => e.stopPropagation()}>
-        <input
-          type="text"
-          className={styles.cardWrapTextInput}
-          value={coinQuantity}
-          onKeyDown={(e) => isEnter(e)}
-          onChange={(e) => onChangeQuantity(e)}
-          disabled={!isManage === true}
-        />
-      </div>
+      </span>
+      <fieldset
+        className={styles.cardChangeValues}
+        disabled={!isManage === true}
+      >
+        <div className={styles.cardWrapText} onClick={(e) => e.stopPropagation()}>
+          <input
+            className={styles.cardWrapTextInput}
+            value={coinBuyPrice}
+            onKeyDown={(e) => isEnter(e)}
+            onChange={(e) => onChangeBuyPrice(e)}
+            type="number"
+            min="0"
+            required
+          />
+        </div>
+        <div className={styles.cardWrapText} onClick={(e) => e.stopPropagation()}>
+          <input
+            className={styles.cardWrapTextInput}
+            value={coinQuantity}
+            onKeyDown={(e) => isEnter(e)}
+            onChange={(e) => onChangeQuantity(e)}
+            type="number"
+            min="0"
+            required
+          />
+        </div>
+      </fieldset>
       <div className={isManage ? styles.cardWrapTextOP : styles.cardWrapText}>
         {coin.price_change_percentage_24h?.toFixed(2)}
         %
       </div>
       <div className={isManage ? styles.cardWrapTextOP : styles.cardWrapText}>
-        {checkProfit(coin)}
         $
+        {checkProfit(coin)}
       </div>
       <div className={isManage ? styles.cardWrapTextOP : styles.cardWrapText}>
         $
@@ -116,7 +129,7 @@ const ExactPortfolioCoin = memo(({ coin, isManage }: PortfolioCoinProps) => {
       >
         <IconCheckCircle />
       </div>
-    </div>
+    </form>
   );
 });
 

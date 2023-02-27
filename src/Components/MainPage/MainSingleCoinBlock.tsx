@@ -14,15 +14,20 @@ const MainSingleCoinBLock = memo(({ coin, currency }: SingleCoinBlockProps) => {
       <div className={styles.mrktRank}>
         <div className={styles.techWrapRank}>{coin.market_cap_rank}</div>
       </div>
-      <div className={styles.coinName}>
-        <img className={styles.singleCoinImage} src={coin.image} alt="coinLogo" />
+      <h3 className={styles.coinName}>
+        <img
+          className={styles.singleCoinImage}
+          src={coin.image}
+          alt="coinLogo"
+          aria-label={coin.name}
+        />
         {coin.name}
-      </div>
-      <div className={styles.coinPrice}>
+      </h3>
+      <span className={styles.coinPrice}>
         {coin.current_price === null ? '0' : coin.current_price?.toFixed(2)}
         {' '}
         {currency}
-      </div>
+      </span>
       <div
         className={
           coin.price_change_percentage_24h > 0

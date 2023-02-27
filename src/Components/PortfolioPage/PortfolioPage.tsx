@@ -21,18 +21,15 @@ const PortfolioPage = ({ coins }: PortfolioPageProps) => {
   const [isModalMinor, setIsModalMinor] = useState(false);
   const [sortedCoins, setSortedCoins] = useState('');
 
-  const {
-    initialBalance: iinitialBalance,
-    currentBalance: ccurrentBalance,
-  } = getPortfolioData(coins);
+  const { initialBalance, currentBalance } = getPortfolioData(coins);
 
   const onManage = () => {
     setIsManage(!isManage);
   };
 
-  const TotalProfitLoss = (ccurrentBalance - iinitialBalance) / (iinitialBalance / 100);
+  const TotalProfitLoss = (currentBalance - initialBalance) / (initialBalance / 100);
 
-  const PNLCurrency = ccurrentBalance - iinitialBalance;
+  const PNLCurrency = currentBalance - initialBalance;
 
   const sortCoins = () => {
     return (
@@ -52,12 +49,12 @@ const PortfolioPage = ({ coins }: PortfolioPageProps) => {
       <div className={styles.PortfolioPageTechWrap}>
         <div className={styles.PPTopWrap}>
           <PortfolioPageChangeElement
-            balance={ccurrentBalance}
+            balance={currentBalance}
             TotalProfitLoss={TotalProfitLoss}
             PNLCurrency={PNLCurrency}
           />
           <div className={styles.PPManageCoins}>
-            <div className={styles.PPAddToPButton}>
+            <span className={styles.PPAddToPButton}>
               <button
                 type="button"
                 onClick={() => onManage()}
@@ -69,7 +66,7 @@ const PortfolioPage = ({ coins }: PortfolioPageProps) => {
               >
                 Manage
               </button>
-            </div>
+            </span>
             <AddButton />
           </div>
         </div>
@@ -100,9 +97,9 @@ const PortfolioPage = ({ coins }: PortfolioPageProps) => {
                 ))}
             </div>
           </div>
-          <div className={styles.portfolioChartWrap}>
-            {coins && <PieChart balance={ccurrentBalance} coins={coins} />}
-          </div>
+          <aside className={styles.portfolioChartWrap}>
+            {coins && <PieChart balance={currentBalance} coins={coins} />}
+          </aside>
         </div>
       </div>
       <ModalMinor isActive={isModalMinor} setIsActive={setIsModalMinor} />

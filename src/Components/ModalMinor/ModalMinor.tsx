@@ -25,9 +25,9 @@ const ModalMinor = memo((props: ModalMinorProps) => {
 
   const exactSearchedElement: SearchedCoinsTypes[] = [];
 
-  const SearchCards = useMemo(() => {
+  const searchCards = useMemo(() => {
     return searchCoin
-      ? [...coins].filter((coin) => {
+      ? [...coins].filter((coin: SearchedCoinsTypes) => {
         if (coin.name.toLowerCase() === searchCoin.toLocaleLowerCase()) {
           return exactSearchedElement.push(coin);
         } return coin.name
@@ -37,7 +37,10 @@ const ModalMinor = memo((props: ModalMinorProps) => {
       : [];
   }, [searchCoin]);
 
-  const SearchedCoins = exactSearchedElement.length ? exactSearchedElement : SearchCards;
+  // Небольшой костыль из-за ограничений API
+  const searchedCoins = exactSearchedElement.length
+    ? exactSearchedElement
+    : searchCards;
 
   return (
     <div
@@ -60,7 +63,7 @@ const ModalMinor = memo((props: ModalMinorProps) => {
         </div>
         <div className={styles.minorCardsWrap}>
           {isError && <NoRequests />}
-          {SearchedCoins?.map((element: SearchedCoinsTypes) => (
+          {searchedCoins?.map((element: SearchedCoinsTypes) => (
             <Link
               to={`/coins/${element.id}`}
               className={styles.minorCard}
