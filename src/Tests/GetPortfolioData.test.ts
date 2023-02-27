@@ -1,4 +1,4 @@
-import { getPortfolioData } from './GetPortfolioData';
+import { getPortfolioData } from '../Components/PortfolioPage/Functions/GetPortfolioData';
 
 const testData = [
   {
