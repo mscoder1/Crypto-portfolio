@@ -6,7 +6,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.11.0",
-    "@mui/material": "^5.11.8",
+    "@mui/material": "^5.11.11",
     "@reduxjs/toolkit": "^1.9.2",
     "@types/highcharts": "^7.0.0",
     "@types/jest": "^27.5.2",
