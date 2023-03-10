@@ -25,9 +25,3 @@
     justify-content: center;
     color: black;
 }
-
-@media screen and (max-width: 800px) {
-    .topInfoBlock {
-        width: 750px;
-    }
-}
