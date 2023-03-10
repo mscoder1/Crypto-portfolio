@@ -1,0 +1,85 @@
+.chartMainWrap {
+    width: 1096px;
+    height: 474px;
+    margin: 0 auto;
+    margin-top: 80px;
+    border-radius: 13px;
+}
+
+.chartButtonBlock {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.lBlock {
+    width: 30%;
+    display: flex;
+}
+
+.rBlock {
+    width: 40%;
+    justify-content: flex-end;
+    display: flex;
+}
+
+.chartButton {
+    width: 50px;
+    height: 35px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 17px;
+    background-color: #376A20;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.chartButtonLeftNotActive {
+    border: none;
+    background: #376A20;
+    border-radius: 20px;
+    height: 35px;
+    width: 100px;
+    color: white;
+    font-size: 14px;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+.chartButtonLeft {
+    border: none;
+    background-color: #DBE4D1;
+    border: 0.5px solid black;
+    color: black;
+    border-radius: 20px;
+    height: 35px;
+    width: 100px;
+    font-size: 14px;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+.chartButton:active {
+    background-color: #DBE4D1;
+    border: 0.5px solid black;
+    color: black;
+}
+
+.chartLoading {
+    display: flex;
+    background-color: #FDFDF6;
+    height: 50%;
+    width: 80%;
+    position: absolute;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.chartLoadingDisabled {
+    display: none;
+}

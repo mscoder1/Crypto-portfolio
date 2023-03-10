@@ -1,0 +1,19 @@
+.PortfolioPageChangeBlock {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.PortfolioPageChangeElement {
+    width: 28%;
+    height: 33%;
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #EBEFE2;
+    border-radius: 32px;
+}
+
+.PortfolioPageChangeElementText {
+    color: black;
+}

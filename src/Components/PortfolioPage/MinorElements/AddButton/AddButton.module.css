@@ -1,0 +1,38 @@
+.PPAddBlockButtonAdd {
+    border-radius: 13px;
+    width: 125px;
+    height: 55px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    background: #376A20;
+    border-radius: 32px;
+    border-radius: 32px;
+}
+
+.PPAddBlockButtonAdd:active {
+    border-radius: 13px;
+    width: 125px;
+    height: 55px;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    background: #DBE4D1;
+    border-radius: 32px;
+    border: 1.5px solid #1F1F36;
+}
+
+.PPAddBlockButtonAddActive {
+    border-radius: 13px;
+    width: 125px;
+    height: 55px;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    background: #DBE4D1;
+    border-radius: 32px;
+    border: 1px solid black;
+}

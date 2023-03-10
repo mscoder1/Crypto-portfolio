@@ -1,0 +1,124 @@
+.ECwrap {
+    height: 125%;
+    width: 100vw;
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FDFDF6;
+}
+
+.errorWrap {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exactCoinPageWrap {
+    width: 1370px;
+    height: 100%;
+}
+
+.coinInfoWrap {
+    margin-top: 50px;
+    width: 1270px;
+    height: 395px;
+    display: flex;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.leftInfoWrap {
+    width: 670px;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: #F0F3E8;
+    border-radius: 15px;
+}
+
+.rankBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 23px;
+    padding: 4px;
+    color: black;
+    border-radius: 13px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #bbc2b2;
+    border-radius: 17.5px;
+}
+
+.nameBlock {
+    display: flex;
+    align-items: center;
+    font-size: 23px;
+    margin-left: 50px;
+    margin-bottom: 13px;
+    font-weight: bold;
+    color: black;
+}
+
+.exactCoinImage {
+    width: 30px;
+    height: 30px;
+}
+
+.priceBlockWrapper {
+    display: flex;
+    margin-left: 50px;
+    margin-bottom: 7px;
+}
+
+.priceBlock {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: black;
+}
+
+.dailyChangePercentagePositive {
+    color: white;
+    font-size: 22px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    padding: 7px;
+    border-radius: 13px;
+}
+
+.dailyChangePercentageNegative {
+    color: white;
+    font-size: 22px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    padding: 7px;
+    border-radius: 13px;
+}
+
+.tableRow {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.5px solid rgb(97, 97, 97);
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    padding-bottom: 4px;
+    color: black;
+}

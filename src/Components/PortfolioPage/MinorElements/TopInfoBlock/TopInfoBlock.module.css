@@ -1,0 +1,33 @@
+.topInfoBlock {
+    display: flex;
+    width: 819px;
+    margin-left: 40px;
+    padding-left: 38px;
+    padding-right: 30px;
+    border-bottom: 1px solid lightgray;
+}
+
+.topInfoBlockTextCoin {
+    width: 100px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left:38px;
+    color: black;
+}
+
+.topInfoBlockText {
+    width: 133px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+@media screen and (max-width: 800px) {
+    .topInfoBlock {
+        width: 750px;
+    }
+}

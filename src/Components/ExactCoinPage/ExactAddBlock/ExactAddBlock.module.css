@@ -1,0 +1,71 @@
+.ecaddToPort {
+    height: 237px;
+    width: 381px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-left: 80px;
+    background-color: #F0F3E8;
+    border-radius: 15px;
+}
+
+.fieldsetaddblock {
+    border: none;
+}
+
+.addBlckInfoTitle {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: black;
+    text-align: center;
+}
+
+.enterInfo {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.EnterText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-left: 5px;
+    color: black;
+}
+
+.EnterInput {
+    border: none;
+    margin-left: 10px;
+    font-size: 16px;
+    width: 80px;
+    background-color: #F0F3E8;
+    color: black;
+}
+
+.addCoinButton {
+    width: 60%;
+    height: 40px;
+    border-radius: 13px;
+    background-color: #376A20;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.addCoinButton:disabled {
+    width: 60%;
+    height: 40px;
+    background-color: #76786E;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 13px;
+    opacity: 0.5;
+    cursor: auto;
+}

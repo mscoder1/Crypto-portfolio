@@ -1,0 +1,123 @@
+.cardWrap {
+    display: flex;
+    height: 50px;
+    margin-left: 45px;
+    margin-top: 25px;
+}
+
+/* BUTTONS */
+.cardDelete {
+    border: none;
+    background-color: #FDFDF6;
+    width: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.cardDeleteNotActive {
+    width: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.cardApplyChangesRight {
+    border: none;
+    background-color: #FDFDF6;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cardApplyChangesRightNotActive {
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+/* NAME + IMG */
+.cardWrapTextName {
+    display: flex;
+    align-items: center;
+    width: 113px;
+    color: black;
+}
+.cardWrapTextOPName {
+    display: flex;
+    align-items: center;
+    width: 113px;
+    opacity: 0.5;
+    color: black;
+}
+
+.cardWrapImage {
+    width: 28px;
+    height: 25px;
+    padding-right: 3px;
+}
+
+.cardNameText {
+    font-size: 17px;
+}
+
+/* PRICE */
+.cardWrapPriceText {
+    width: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cardWrapPriceTextOP {
+    width: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+}
+
+/* FIELDSET */
+.formWrap {
+    display: flex;
+}
+
+.cardChangeValues {
+    width: 210px;
+    display: flex;
+    align-items: center;
+    border: 0;
+    padding: 0;
+}
+.cardWrapTextI {
+    width: 105px;
+    display: flex;
+    justify-content: center;
+}
+.cardWrapTextInput {
+    width: 80px;
+    display: flex;
+    text-align: center;
+    padding-left: 7px;
+    border: 0;
+    background-color: #FDFDF6;
+    color: black;
+}
+
+.cardWrapText {
+    width: 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cardWrapTextOP {
+    width: 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+}

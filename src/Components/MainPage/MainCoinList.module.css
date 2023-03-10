@@ -1,0 +1,201 @@
+.mainWrap {
+    display: flex;
+    background-color: #FDFDF6;
+    width: 1440px;
+    height: 100vh;
+    padding-top: 60px;
+    padding-left: 70px;
+}
+
+.wrap {
+    margin-top: 50px;
+    height: 616px;
+    width: 792px;
+    margin-left: 35px;
+    padding-right: 40px;
+}
+
+.sortBlockWrap {
+    display: flex;
+    margin-left: 1vw;
+    height: 5vh;
+    border-bottom: 1px solid #EDEDED;
+    margin-bottom: 20px;
+}
+
+.mainCoinsListWrap {
+    height: 100%;
+    width: 780px;
+}
+
+.mainCoinListWrapScroll {
+    overflow-y: scroll;
+    height: 70vh;
+    width: 800px;
+}
+.mainCoinListWrapScroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.mainCoinListWrapScroll::-webkit-scrollbar-track {
+    background: rgba(237, 237, 237, 0.7);
+    border-radius: 3.5px;
+}
+
+.mainCoinListWrapScroll::-webkit-scrollbar-thumb {
+    width: 7px;
+    height: 92px;
+    background: #376A20;
+    border-radius: 3.5px;
+}
+
+.mrktRank {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 2%;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 24px;
+    color: black;
+}
+
+.coinName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 142px;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 24px;
+    color: black;
+}
+
+.coinPrice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 138px;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 24px;
+    color: black;
+}
+
+.coinDailyPriceChange {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 138px;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 24px;
+    color: black;
+}
+
+.coinDailyHigh {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 142px;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 24px;
+    color: black;
+}
+
+.coinMarketCap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 142px;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 24px;
+    color: black;
+}
+
+.bottomBtnBlock {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.bottomBtnBlockNotActive {
+    display: none;
+}
+
+.toFirstPageBtn {
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    border-radius: 13px;
+    background-color: #DBE4D1;
+    border: 1px solid black;
+    color: black;
+    margin: 0.5%;
+    cursor: pointer;
+}
+
+.toFirstPageBtnDisabled {
+    display: none;
+}
+
+.toPrevBtn {
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    border-radius: 13px;
+    background-color: #DBE4D1;
+    border: 1px solid black;
+    color: black;
+    margin: 0.5%;
+    cursor: pointer;
+}
+
+.toPrevBtnDisabled {
+    display: none;
+}
+
+.currentPageBtn {
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    border-radius: 13px;
+    background-color: #376A20;
+    border: 1px solid black;
+    color: white;
+    margin: 0.5%;
+    cursor: pointer;
+}
+
+.toNextBtn {
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    border-radius: 13px;
+    background-color: #DBE4D1;
+    border: 1px solid black;
+    color: black;
+    margin: 0.5%;
+    cursor: pointer;
+}
+
+.toLastPageBtn {
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    border-radius: 13px;
+    background-color: #DBE4D1;
+    border: 1px solid black;
+    color: black;
+    margin: 0.5%;
+    cursor: pointer;
+}
+
+.bottomBtnDisabled {
+    display: none;
+    margin: 0.5%;
+    cursor: pointer;
+}
