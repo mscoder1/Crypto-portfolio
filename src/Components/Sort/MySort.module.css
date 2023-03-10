@@ -1,17 +1,3 @@
-.selectWrap {
-    display: flex;
-    margin-left: 50px;
-    margin-bottom: 30px;
-    background: #376A20;
-    border-radius: 32px;
-    border: none;
-    width: 90px;
-    height: 30px;
-    color: white;
-    align-items: center;
-    justify-content: center;
-}
-
 .selectElement {
     color: white;
     background: #376A20;
@@ -20,4 +6,7 @@
     border-radius: 32px;
     border: none;
     cursor: pointer;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    text-align-last: center;
 }

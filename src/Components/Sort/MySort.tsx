@@ -16,22 +16,20 @@ const MySort = ({
   options, defaultValue, value, onChange,
 }: MySortProps) => {
   return (
-    <div className={styles.selectWrap}>
-      <select
-        className={styles.selectElement}
-        value={value}
-        onChange={(event) => onChange(event.target.value)}
-      >
-        <option disabled id="coinselect" value="">
-          {defaultValue}
+    <select
+      className={styles.selectElement}
+      value={value}
+      onChange={(event) => onChange(event.target.value)}
+    >
+      <option disabled id="coinselect" value="">
+        {defaultValue}
+      </option>
+      {options.map((option: OptionTypes) => (
+        <option key={option.value} value={option.value}>
+          {option.name}
         </option>
-        {options.map((option: OptionTypes) => (
-          <option key={option.value} value={option.value}>
-            {option.name}
-          </option>
-        ))}
-      </select>
-    </div>
+      ))}
+    </select>
   );
 };
 
